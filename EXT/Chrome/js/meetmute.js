@@ -116,7 +116,7 @@ const keydownEvent = new KeyboardEvent("keydown", {
   key: "d",
   code: "KeyD",
   
-  ctrlKey: true,
+  metaKey: true,
   charCode: 100,
   keyCode: 100,
   which: 100,
