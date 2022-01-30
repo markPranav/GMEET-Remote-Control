@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:network_info_plus/network_info_plus.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -35,7 +36,7 @@ class RemoteConWSServer {
   
   */
 
-  void startServer(BuildContext context) {
+  Future<void> startServer(BuildContext context) async {
     var handler = webSocketHandler((WebSocketChannel webSocket) {
       // webSocket.sink.add("Connected");
       webSocket.stream.listen((data) {
@@ -54,7 +55,9 @@ class RemoteConWSServer {
       });
     });
 
-    shelf_io.serve(handler, '192.168.0.101', 3000).then((server) {
+    String? myIp = await NetworkInfo().getWifiIP();
+
+    shelf_io.serve(handler, myIp, 3000).then((server) {
       _server = server;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
