@@ -1,0 +1,52 @@
+{
+    "name": "GMeet mute from phone",
+    "short_name": "MeetMuteFromPhone",
+    "author": "Sripranav Muktevi",
+    "version": "0.0.0",
+    "manifest_version": 2,
+    "description": "Fast & global muting/unmuting for Google Meet via your mobile.",
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_locale": "en",
+    "background": {
+      "scripts": ["js/background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://meet.google.com/*"],
+        "js": ["js/meetmute.js"]
+      }
+    ],
+    "browser_action": {
+      "default_icon": "icons/icon19.png",
+      "default_title": "Disconnected"
+    },
+    "permissions": ["https://meet.google.com/*"],
+    "commands": {
+      "toggle_mute": {
+        "description": "Toggle Mute",
+        "suggested_key": {
+          "default": "Ctrl+Shift+0"
+        },
+        "global": true
+      },
+      "mute": {
+        "description": "Mute",
+        "suggested_key": {
+          "default": "Ctrl+Shift+M"
+        },
+        "global": true
+      },
+      "unmute": {
+        "description": "Unmute",
+        "suggested_key": {
+          "default": "Ctrl+Shift+B"
+        },
+        "global": true
+      }
+    }
+}
