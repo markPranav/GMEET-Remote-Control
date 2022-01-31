@@ -3,6 +3,25 @@ chrome.commands.onCommand.addListener((command) => {
 })
 
 
+
+function setIcon(status) {
+  let iconType = ''
+  if (status === 'muted' || status === 'unmuted') {
+    iconType = '_' + status
+  }
+  let title = status.charAt(0).toUpperCase() + status.substr(1)
+  chrome.action.setIcon({
+    path: {
+      "16": `icons/icon16${ iconType }.png`,
+      "48": `icons/icon48${ iconType }.png`
+    }
+  })
+  chrome.action.setTitle({
+    title: title
+  })
+}
+
+
 connectedSockets = []
 
 createSocketChannel = ( ipAddr)=>{
@@ -65,19 +84,3 @@ function processCommand(command, googleMeetTabs) {
   })
 }
 
-function setIcon(status) {
-  let iconType = ''
-  if (status === 'muted' || status === 'unmuted') {
-    iconType = '_' + status
-  }
-  let title = status.charAt(0).toUpperCase() + status.substr(1)
-  chrome.browserAction.setIcon({
-    path: {
-      "16": `icons/icon16${ iconType }.png`,
-      "48": `icons/icon48${ iconType }.png`
-    }
-  })
-  chrome.browserAction.setTitle({
-    title: title
-  })
-}

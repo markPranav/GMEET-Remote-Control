@@ -35,7 +35,7 @@ function waitForMuteButton() {
       watchIsMuted(el);
     })
     .catch((error) => {
-      chrome.extension.sendMessage({ message: "disconnected" });
+      chrome.runtime.sendMessage({ message: "disconnected" });
     });
 }
 
@@ -50,7 +50,7 @@ function isMuted() {
 
 function updateMuted(newValue) {
   muted = newValue || isMuted();
-  chrome.extension.sendMessage({ message: muted ? "muted" : "unmuted" });
+  chrome.runtime.sendMessage({ message: muted ? "muted" : "unmuted" });
 }
 
 var isMutedObserver;
@@ -89,7 +89,7 @@ function watchBodyClass() {
 watchBodyClass();
 
 window.onbeforeunload = (event) => {
-  chrome.extension.sendMessage({ message: "disconnected" });
+  chrome.runtime.sendMessage({ message: "disconnected" });
 };
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
