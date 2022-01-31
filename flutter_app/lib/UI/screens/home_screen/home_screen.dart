@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   RemoteConWSServer rcwss = RemoteConWSServer();
   bool _serverStat = false;
+  String _currentChannel = 'None';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,17 +50,81 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: const Text("Close Connection"),
               ),
-            ElevatedButton(
-              onPressed: () {
-                rcwss.sendMessage("meet", "action", "mute-toggle");
-              },
-              child: const Text("Toggle Mute"),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              width: 200,
+              child: OutlinedButton(
+                onPressed: () {
+                  List<String> channelList = rcwss.getChannelNames();
+                  channelList.isNotEmpty
+                      ? showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              color: const Color(0xfff9f5f9),
+                              height: 400,
+                              padding: const EdgeInsets.all(10),
+                              child: Center(
+                                child: ListView.builder(
+                                  itemBuilder: (context, position) {
+                                    return InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          _currentChannel =
+                                              channelList[position];
+                                        });
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Card(
+                                        color: (_currentChannel ==
+                                                channelList[position])
+                                            ? Colors.green[100]
+                                            : Colors.white,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(12.0),
+                                          child: Text(
+                                            channelList[position],
+                                            style:
+                                                const TextStyle(fontSize: 18.0),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  itemCount: channelList.length,
+                                ),
+                              ),
+                            );
+                          })
+                      : showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return const SizedBox(
+                                height: 400,
+                                child: Center(
+                                    child: Text(
+                                  'No Meet is Connected',
+                                  style: TextStyle(
+                                      color: Colors.green,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w500),
+                                )));
+                          });
+                },
+                child: Text('Select a Channel: $_currentChannel'),
+                style: OutlinedButton.styleFrom(
+                  side: const BorderSide(width: 1.5, color: Colors.green),
+                ),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
-                print(rcwss.getChannelNames());
+                rcwss.sendMessage(_currentChannel, "action", "mute-toggle");
               },
-              child: const Text("Get Channels"),
+              child: const Text("Toggle Mute"),
             ),
           ],
         ),

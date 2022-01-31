@@ -2,49 +2,11 @@ chrome.commands.onCommand.addListener((command) => {
   handleCommand(command)
 })
 
+
+window.connectedSockets = []
+
 window.createSocketChannel = ( ipAddr)=>{
-  let socket = new WebSocket("ws://"+ipAddr+":"+PORT);
-      socket.onopen = function(e) {
-        var res = {
-          "query": "set-name",
-          "message": "meet"
-        }
-        socket.send(JSON.stringify(res));
-        // sendResponse('socket-created')
-      };
-      
-      socket.onmessage = function(event) {
-        let data = JSON.parse(event.data)
-        console.log(data)
-        switch (data['query']) {
-          case 'action':
-            switch (data['data']) {
-              case 'mute-toggle':
-                console.log('here')
-                handleCommand('toggle_mute')
-                break;
-              default:
-                break;
-            }
-            break;
-          default:
-            break;
-        }
-      };
-      
-      socket.onclose = function(event) {
-        if (event.wasClean) {
-          console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
-        } else {
-          // e.g. server process killed or network down
-          // event.code is usually 1006 in this case
-          console.log('[close] Connection died');
-        }
-      };
-      
-      socket.onerror = function(error) {
-        alert(`[error] ${error.message}`);
-      };
+  window.connectedSockets = handleSocketConect(ipAddr)
 }
 
 chrome.runtime.onMessage.addListener(
@@ -53,7 +15,8 @@ chrome.runtime.onMessage.addListener(
       setIcon(request.message)
     }
     // else if(request.hasOwnProperty('ipAddr')){
-      
+    //   window.connectedSockets = handleSocketConect(request.ipAddr);
+    //   sendResponse('sockets-created')
     // }
     
   })
@@ -62,6 +25,11 @@ chrome.runtime.onMessage.addListener(
 //   handleCommand('toggle_mute')
 // })
 
+function processCommandSingle(command, tab) {
+  chrome.tabs.sendMessage(tab.id, { command: command }, (response) => {
+    setIcon(response.message)
+  })
+}
 
 
 function handleCommand(command) {

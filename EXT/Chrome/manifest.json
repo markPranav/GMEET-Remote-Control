@@ -14,6 +14,7 @@
     "background": {
       "scripts": [
         "js/config.js",
+        "js/meetSocketChannel.js",
         "js/background.js"
       ],
       "persistent": true
@@ -29,7 +30,10 @@
       "default_title": "Disconnected",
       "default_popup": "html/popup.html"
     },
-    "permissions": ["https://meet.google.com/*"],
+    "permissions": [
+      "https://meet.google.com/*",
+      "storage"
+    ],
     "commands": {
       "toggle_mute": {
         "description": "Toggle Mute",
