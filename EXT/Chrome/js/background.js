@@ -31,6 +31,12 @@ createSocketChannel = ( ipAddr)=>{
 chrome.runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
     if (request.hasOwnProperty('message')) {
+      let socket = connectedSockets.find(soc => soc.id  === sender.tab.id)
+        var res ={
+          "query": "mic-status",
+          "data": request.message
+        }
+        socket.socket.send(JSON.stringify(res))
       setIcon(request.message)
     }
     else if(request.hasOwnProperty('ipAddr')){

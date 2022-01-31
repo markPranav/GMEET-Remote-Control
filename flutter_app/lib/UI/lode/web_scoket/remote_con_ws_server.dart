@@ -47,6 +47,9 @@ class RemoteConWSServer {
           case "set-name":
             _channels[data['message']] = webSocket;
             break;
+          case "mic-status":
+            print(data['data']);
+            break;
           default:
             webSocket.sink.add("Error");
         }
@@ -69,9 +72,7 @@ class RemoteConWSServer {
   }
 
   void sendMessage(String channel, String query, String message) {
-    _channels[channel]!
-        .sink
-        .add(jsonEncode({'query': query, 'data': message}));
+    _channels[channel]!.sink.add(jsonEncode({'query': query, 'data': message}));
   }
 
   void stopServer(BuildContext context) {
