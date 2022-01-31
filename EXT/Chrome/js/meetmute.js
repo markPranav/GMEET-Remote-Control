@@ -96,32 +96,38 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   muted = isMuted();
   if (request && request.command && request.command === "toggle_mute") {
     muted = !muted;
-    sendKeyboardCommand();
+    sendMuteEvent();
   } else if (request && request.command && request.command === "mute") {
     if (!muted) {
       muted = !muted;
-      sendKeyboardCommand();
+      sendMuteEvent();
     }
   } else if (request && request.command && request.command === "unmute") {
     if (muted) {
       muted = !muted;
-      sendKeyboardCommand();
+      sendMuteEvent();
     }
   }
-
+  // console.log(chrome.runtime.getPlatformInfo())
   sendResponse({ message: muted ? "muted" : "unmuted" });
 });
 
-const keydownEvent = new KeyboardEvent("keydown", {
-  key: "d",
-  code: "KeyD",
-  
-  metaKey: true,
-  charCode: 100,
-  keyCode: 100,
-  which: 100,
-});
+// const keydownEvent = new KeyboardEvent("keydown", {
+//   key: "d",
+//   code: "KeyD",
+//   // ctrlKey: chrome.runtime.PlatformOs != "mac",
+//   metaKey: true,
+//   charCode: 100,
+//   keyCode: 100,
+//   which: 100,
+// });
 
-function sendKeyboardCommand() {
-  document.dispatchEvent(keydownEvent);
+function sendMuteEvent() {
+
+  let mb = document.querySelector(MUTE_BUTTON)
+
+  const ev = new MouseEvent("click", { bubbles: true });
+    mb?.dispatchEvent(ev);
+
+  // document.dispatchEvent(keydownEvent);
 }
