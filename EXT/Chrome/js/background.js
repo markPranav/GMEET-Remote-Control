@@ -3,10 +3,10 @@ chrome.commands.onCommand.addListener((command) => {
 })
 
 
-window.connectedSockets = []
+connectedSockets = []
 
-window.createSocketChannel = ( ipAddr)=>{
-  window.connectedSockets = handleSocketConect(ipAddr)
+createSocketChannel = ( ipAddr)=>{
+  connectedSockets = handleSocketConect(ipAddr)
 }
 
 chrome.runtime.onMessage.addListener(
@@ -14,10 +14,13 @@ chrome.runtime.onMessage.addListener(
     if (request.hasOwnProperty('message')) {
       setIcon(request.message)
     }
-    // else if(request.hasOwnProperty('ipAddr')){
-    //   window.connectedSockets = handleSocketConect(request.ipAddr);
-    //   sendResponse('sockets-created')
-    // }
+    else if(request.hasOwnProperty('ipAddr')){
+      connectedSockets = handleSocketConect(request.ipAddr);
+    }else if(request.hasOwnProperty('checkIfSockets')){
+      sendResponse({
+        connectedSockets: connectedSockets
+      })
+    }
     
   })
 

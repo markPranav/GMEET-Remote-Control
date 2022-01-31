@@ -6,18 +6,31 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     });
 
-    const bg = chrome.extension.getBackgroundPage()
+    // const bg = chrome.extension.getBackgroundPage()
+
     msgDiv = document.getElementById('msg')
 
     connectDiv = document.getElementById('connect')
 
-    if(bg.connectedSockets.length == 0){
-        msgDiv.hidden = true
-    }else{
-        // console.log(bg.connectedSockets)
-        msgDiv.hidden = false
-        // connectDiv.hidden = true
-    }
+    chrome.runtime.sendMessage({
+        "checkIfSockets": "check"
+    }, function(response){
+        if(response.connectedSockets.length == 0){
+            msgDiv.hidden = true
+        }else{
+            // console.log(response.connectedSockets)
+            msgDiv.hidden = false
+            // connectDiv.hidden = true
+        }
+    })
+
+    // if(bg.connectedSockets.length == 0){
+    //     msgDiv.hidden = true
+    // }else{
+    //     // console.log(bg.connectedSockets)
+    //     msgDiv.hidden = false
+    //     // connectDiv.hidden = true
+    // }
 
     const connectWS = ()=>{
         var ipAddr = document.getElementById("ipAddr").value
@@ -26,13 +39,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
         });
 
         
-        bg.createSocketChannel(ipAddr)
+        // bg.createSocketChannel(ipAddr)
         // connectDiv.hidden = true
         msgDiv.hidden = false
         
-        // chrome.runtime.sendMessage({
-        //     "ipAddr": ipAddr
-        // },(res)=>{
+        chrome.runtime.sendMessage({
+            "ipAddr": ipAddr
+        }
+        // ,(res)=>{
         //     if(res==="socket-created"){
         //         console.log('empty', bg.connectedSockets.length)
         //         let el = document.getElementById('msg')
@@ -42,7 +56,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         //         msgDiv.hidden = false
         //     }
         // }
-        // )
+        )
     }
 
     document.getElementById('conBtn').addEventListener("click", connectWS, false)
