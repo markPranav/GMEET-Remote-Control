@@ -40,13 +40,13 @@ chrome.runtime.onMessage.addListener(
       setIcon(request.message)
     }
     else if(request.hasOwnProperty('ipAddr')){
-      connectedSockets = handleSocketConect(request.ipAddr);
+      connectedSockets = handleSocketConect(request.ipAddr, sendResponse);
     }else if(request.hasOwnProperty('checkIfSockets')){
       sendResponse({
-        connectedSockets: connectedSockets
+        connectedSockets: connectedSockets.filter((i)=>i.stat === "connected")
       })
     }
-    
+    return true;
   })
 
 // chrome.browserAction.onClicked.addListener((tab) => {

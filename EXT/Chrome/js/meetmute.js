@@ -110,6 +110,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
   // console.log(chrome.runtime.getPlatformInfo())
   sendResponse({ message: muted ? "muted" : "unmuted" });
+  return true;
 });
 
 // const keydownEvent = new KeyboardEvent("keydown", {
