@@ -1,5 +1,4 @@
-# GMEET Remote Control
-
+# <img src="https://user-images.githubusercontent.com/66785442/156131112-8abf1791-c186-4ccc-89e7-c6071318398b.png" width=64 height=64/> GMEET Remote Control
 ---
 
 With this extension you can control your Google Meet from any other devices (Mobiles i.e. Android/iOS or desktops(Mac or Windows).
