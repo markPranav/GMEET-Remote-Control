@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/66785442/156130420-a2117b16-daa9-443a-
 ## Features
 ***
 
-1. Conrtol your different google meets on different tabs/windows/devices at the same time from a single remote control far from the orignal device.
+1. Control your different google meets on different tabs/windows/devices at the same time from a single remote control far from the orignal device.
 
 
 https://user-images.githubusercontent.com/66785442/156130671-3b604961-6f30-4882-bece-493b4cb3850c.mov
@@ -88,6 +88,11 @@ Types of query are:
  
 Need to think -> remmember -> and write this part .. || or you know what try to understand the code from repo and make me the documentation for this project.
 I'm looking forward for your pull request.
+
+## Help & Support
+***
+
+Any queries and suggestions to operate this extension or mobile app can be put forward in the issues section of github or you can contact me on my email id pran8010@gmail.com .
 
 
 ## Contributing
