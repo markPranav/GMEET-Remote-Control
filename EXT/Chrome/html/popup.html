@@ -8,19 +8,20 @@
     <title>GMEET RC</title>
 </head>
 <body class="container" style="width: 300px; margin: 5px;">
+
     <header>
-        <h1 class="display-1 text-center text-success">Google Meet RC Hub</h1>
+        <h1 class="display-2 text-center text-success">Google Meet RC Hub</h1>
     </header>
     <div class="container-fluid" id="connect">
         <h6>Enter CODE displayed on your controller app</h6>
         <div class="input-group mb-3">
             <input class="form-control" id="ipAddr" type="text" placeholder="Enter code">
-            <span class="input-group-text" id="basic-addon2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+            <span class="input-group-text" id="basic-addon2" data-bs-toggle="tooltip" data-bs-placement="right"  data-bs-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
               </svg></span>
         </div>
-        <button id="conBtn" class="btn btn-outline-success" >Connect mobile remote</button>        
+        <button data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right" id="conBtn" class="btn btn-outline-success btn-sm" >Connect mobile remote</button>        
     </div>
 
     <hr>
@@ -31,12 +32,14 @@
     <details id="channelList" ></details>
 
     <hr>
+    
+    
     <footer>
         <div class="container-fluid d-flex justify-content-around" id="upperFoot">
             <a class="text-decoration-none" href="https://www.markpran.com/blog" target="_blank">
 
                 <div class="d-flex flex-column justify-content-evenly align-items-center">
-                    <img src="../icons/markPran-Logo.png" alt="markPran Logo" width="50px" height="50px">
+                    <img src="../icons/markPran-Logo.png" alt="markPran Logo" width="40px" height="40px">
                     <figcaption style="font-size: 12px;" class="fw-light text-muted">
                         My Blog
                       </figcaption>
@@ -44,7 +47,7 @@
             </a>
             <a class="text-decoration-none" href="https://www.markpran.com/blog" target="_blank">
                 <div class="d-flex flex-column justify-content-evenly  align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                         <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                         <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                       </svg>
@@ -56,7 +59,7 @@
             </a>
             <a class="text-decoration-none" href="https://github.com/markPranav/GMEET-Remote-Control" target="_blank">
                 <div class="d-flex flex-column justify-content-evenly  align-items-center ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(119,46,157	)" class="bi bi-github" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="rgb(119,46,157	)" class="bi bi-github" viewBox="0 0 16 16">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                       </svg>
                     <figcaption style="font-size: 12px;" class="fw-light text-muted">
@@ -67,7 +70,11 @@
             </a>
             
         </div>
-        <div id="lowerFoot"></div>
+        <hr>
+        <div id="lowerFoot" class="text-center">
+            <p>In case you would like to support this project and </p> 
+            <a href="https://www.buymeacoffee.com/markPranav" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 150px !important;" ></a>
+        </div>
     </footer>
 
 </body>
