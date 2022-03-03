@@ -1,13 +1,22 @@
-# GMEET Remote Control
-
+# <img src="https://user-images.githubusercontent.com/66785442/156131112-8abf1791-c186-4ccc-89e7-c6071318398b.png" width=64 height=64/> GMEET Remote Control
 ---
 
 With this extension you can control your Google Meet from any other devices (Mobiles i.e. Android/iOS or desktops(Mac or Windows).
 
+#### Example:
+https://user-images.githubusercontent.com/66785442/156130420-a2117b16-daa9-443a-b3aa-1f607f8a482b.mov
+
+
 ## Features
 ***
 
-1. Conrtol your different google meets on different tabs/windows/devices at the same time from a single remote control far from the orignal device.
+1. Control your different google meets on different tabs/windows/devices at the same time from a single remote control far from the orignal device.
+
+
+https://user-images.githubusercontent.com/66785442/156130671-3b604961-6f30-4882-bece-493b4cb3850c.mov
+
+
+
 2. Selecting which meet is to be controlled, in similar fashion to how you switch your tv channels.
 3. Near instananeous control with minimal latency.
 4. and much more ....
@@ -79,6 +88,11 @@ Types of query are:
  
 Need to think -> remmember -> and write this part .. || or you know what try to understand the code from repo and make me the documentation for this project.
 I'm looking forward for your pull request.
+
+## Help & Support
+***
+
+Any queries and suggestions to operate this extension or mobile app can be put forward in the issues section of github or you can contact me on my email id pran8010@gmail.com .
 
 
 ## Contributing
