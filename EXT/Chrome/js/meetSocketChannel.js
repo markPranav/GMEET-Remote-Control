@@ -26,6 +26,18 @@ class MeetSocketChannel{
                   // console.log('here')
                   processCommandSingle('toggle_mute', tab)
                   break;
+                case 'mute':
+                  // console.log('here')
+                  processCommandSingle('mute', tab)
+                  break;
+                case 'unmute':
+                  // console.log('here')
+                  processCommandSingle('unmute', tab)
+                  break;
+                case 'cam-toggle':
+                  // console.log('here')
+                  processCommandSingle('toggle_mute', tab)
+                  break;
                 default:
                   break;
               }
