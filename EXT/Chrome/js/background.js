@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener(
     if (request.hasOwnProperty('message')) {
       let socket = connectedSockets.find(soc => soc.id  === sender.tab.id)
         var res ={
-          "query": "mic-status",
+          "query": "status",
           "data": request.message
         }
         socket.socket.send(JSON.stringify(res))

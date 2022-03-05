@@ -1,5 +1,4 @@
 const MUTE_BUTTON = '[role="button"][aria-label*="mic"][data-is-muted]';
-const CAM_BUTTON = '[role="button"][aria-label*="cam"][data-is-muted]';
 
 const waitUntilElementExists = (DOMSelector, MAX_TIME = 5000) => {
   let timeout = 0;
@@ -22,34 +21,17 @@ const waitUntilElementExists = (DOMSelector, MAX_TIME = 5000) => {
   });
 };
 
-var waitingForCamButton = false;
-var waitingForMicButton = false;
+var waitingForMuteButton = false;
 
-
-function waitForCamButton() {
-  if (waitingForCamButton) {
+function waitForMuteButton() {
+  if (waitingForMuteButton) {
     return;
   }
-  waitingForCamButton = true;
-  waitUntilElementExists(CAM_BUTTON)
-    .then((el) => {
-      waitingForCamButton = false;
-      updateMuted();
-      watchIsMuted(el);
-    })
-    .catch((error) => {
-      chrome.runtime.sendMessage({ message: "disconnected" });
-    });
-}
-function waitForMicButton() {
-  if (waitingForMicButton) {
-    return;
-  }
-  waitingForMicButton = true;
+  waitingForMuteButton = true;
   waitUntilElementExists(MUTE_BUTTON)
     .then((el) => {
-      waitingForMicButton = false;
-      updateMicMuted();
+      waitingForMuteButton = false;
+      updateMuted();
       watchIsMuted(el);
     })
     .catch((error) => {
@@ -58,15 +40,8 @@ function waitForMicButton() {
 }
 
 var muted = false;
-var cam = false;
 
-function isCamMuted() {
-  let dataIsMuted = document
-    .querySelector(CAM_BUTTON)
-    .getAttribute("data-is-muted");
-  return dataIsMuted == "true";
-}
-function isMicMuted() {
+function isMuted() {
   let dataIsMuted = document
     .querySelector(MUTE_BUTTON)
     .getAttribute("data-is-muted");
@@ -74,12 +49,8 @@ function isMicMuted() {
 }
 
 function updateMuted(newValue) {
-  muted = newValue || isCamMuted();
-  chrome.runtime.sendMessage({ message: muted ? "cam-off" : "cam-on" });
-}
-function updateMicMuted(newValue) {
-  muted = newValue || isMicMuted();
-  chrome.runtime.sendMessage({ message: muted ? "mute" : "unmute" });
+  muted = newValue || isMuted();
+  chrome.runtime.sendMessage({ message: muted ? "muted" : "unmuted" });
 }
 
 var isMutedObserver;
@@ -92,9 +63,7 @@ function watchIsMuted(el) {
     let newValue = mutations[0].target.getAttribute("data-is-muted") == "true";
 
     if (newValue != muted) {
-      if(el.target.getAttribute("aria-label").contains("cam"))
       updateMuted(newValue);
-      else updateMicMuted(newValue);
     }
   });
   isMutedObserver.observe(el, {
@@ -107,8 +76,7 @@ function watchBodyClass() {
   const bodyClassObserver = new MutationObserver((mutations) => {
     let newClass = mutations[0].target.getAttribute("class");
     if (mutations[0].oldValue != newClass) {
-      waitForCamButton();
-      waitForMicButton();
+      waitForMuteButton();
     }
   });
   bodyClassObserver.observe(document.querySelector("body"), {
@@ -125,43 +93,23 @@ window.onbeforeunload = (event) => {
 };
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  cam = isCamMuted();
-  muted = isMicMuted();
-  if (request && request.command && request.command === "toggle_cam") {
-    cam = !cam;
-    sendCamEvent();
-    sendResponse({ message: cam ? "cam-off" : "cam-on" });
-  } else if (request && request.command && request.command === "cam-off") {
-    if (!cam) {
-      cam = !cam;
-      sendCamEvent();
-      sendResponse({ message: cam ? "cam-off" : "cam-on" });
-    }
-  } else if (request && request.command && request.command === "cam-on") {
-    if (cam) {
-      cam = !cam;
-      sendCamEvent();
-      sendResponse({ message: cam ? "cam-off" : "cam-on" });
-    }
-  }else if (request && request.command && request.command === "toggle_mute") {
-      muted = !muted;
-      sendMuteEvent();
-      sendResponse({ message: muted ? "muted" : "unmuted" });
+  muted = isMuted();
+  if (request && request.command && request.command === "toggle_mute") {
+    muted = !muted;
+    sendMuteEvent();
   } else if (request && request.command && request.command === "mute") {
     if (!muted) {
       muted = !muted;
       sendMuteEvent();
-      sendResponse({ message: muted ? "muted" : "unmuted" });
     }
   } else if (request && request.command && request.command === "unmute") {
     if (muted) {
       muted = !muted;
       sendMuteEvent();
-      sendResponse({ message: muted ? "muted" : "unmuted" });
     }
   }
   // console.log(chrome.runtime.getPlatformInfo())
-  // sendResponse({ message: cam ? "cam-off" : "cam-on" });
+  sendResponse({ message: muted ? "muted" : "unmuted" });
   return true;
 });
 
@@ -178,15 +126,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 function sendMuteEvent() {
 
   let mb = document.querySelector(MUTE_BUTTON)
-
-  const ev = new MouseEvent("click", { bubbles: true });
-    mb?.dispatchEvent(ev);
-
-  // document.dispatchEvent(keydownEvent);
-}
-function sendCamEvent() {
-
-  let mb = document.querySelector(CAM_BUTTON)
 
   const ev = new MouseEvent("click", { bubbles: true });
     mb?.dispatchEvent(ev);

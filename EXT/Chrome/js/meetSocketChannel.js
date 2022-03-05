@@ -36,7 +36,15 @@ class MeetSocketChannel{
                   break;
                 case 'cam-toggle':
                   // console.log('here')
-                  processCommandSingle('toggle_mute', tab)
+                  processCommandSingle('toggle_cam', tab)
+                  break;
+                case 'cam-on':
+                  // console.log('here')
+                  processCommandSingle('cam-on', tab)
+                  break;
+                case 'cam-off':
+                  // console.log('here')
+                  processCommandSingle('cam-off', tab)
                   break;
                 default:
                   break;
