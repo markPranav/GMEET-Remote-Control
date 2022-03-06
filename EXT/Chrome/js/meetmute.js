@@ -74,8 +74,8 @@ function isMicMuted() {
 }
 
 function updateMuted(newValue) {
-  muted = newValue || isCamMuted();
-  chrome.runtime.sendMessage({ message: muted ? "cam-off" : "cam-on" });
+  cam = newValue || isCamMuted();
+  chrome.runtime.sendMessage({ message: cam ? "cam-off" : "cam-on" });
 }
 function updateMicMuted(newValue) {
   muted = newValue || isMicMuted();
@@ -83,24 +83,43 @@ function updateMicMuted(newValue) {
 }
 
 var isMutedObserver;
+var isCamObserver;
 
 function watchIsMuted(el) {
-  if (isMutedObserver) {
-    isMutedObserver.disconnect();
-  }
-  isMutedObserver = new MutationObserver((mutations) => {
-    let newValue = mutations[0].target.getAttribute("data-is-muted") == "true";
+ 
 
-    if (newValue != muted) {
-      if(el.target.getAttribute("aria-label").contains("cam"))
-      updateMuted(newValue);
-      else updateMicMuted(newValue);
+  if(el.getAttribute("aria-label").includes("mic")){
+    if (isMutedObserver) {
+      isMutedObserver.disconnect();
     }
-  });
-  isMutedObserver.observe(el, {
-    attributes: true,
-    attributeFilter: ["data-is-muted"],
-  });
+    isMutedObserver = new MutationObserver((mutations) => {
+      let newValue = mutations[0].target.getAttribute("data-is-muted") == "true";
+      // console.log(el)
+      if (newValue != muted) {
+        updateMicMuted(newValue);
+      }
+    });
+    isMutedObserver.observe(el, {
+      attributes: true,
+      attributeFilter: ["data-is-muted"],
+    });    
+  }else{
+    if (isCamObserver) {
+      isCamObserver.disconnect();
+    }
+    isCamObserver = new MutationObserver((mutations) => {
+      let newValue = mutations[0].target.getAttribute("data-is-muted") == "true";
+      // console.log(el)
+      if (newValue != cam) {
+        updateMuted(newValue);
+      }
+    });
+    isCamObserver.observe(el, {
+      attributes: true,
+      attributeFilter: ["data-is-muted"],
+    });  
+  }
+
 }
 
 function watchBodyClass() {
