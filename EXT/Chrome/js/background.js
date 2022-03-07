@@ -39,6 +39,15 @@ chrome.runtime.onMessage.addListener(
         socket.socket.send(JSON.stringify(res))
       setIcon(request.message)
     }
+    else if (request.hasOwnProperty('attendants')) {
+      console.log("here");
+      socket = connectedSockets.find(soc => soc.id  === sender.tab.id)
+        var res ={
+          "query": "attendants",
+          "data": request.attendants
+        }
+        socket.socket.send(JSON.stringify(res))
+    }
     else if(request.hasOwnProperty('ipAddr')){
       connectedSockets = handleSocketConect(request.ipAddr, sendResponse);
     }else if(request.hasOwnProperty('checkIfSockets')){
@@ -55,7 +64,7 @@ chrome.runtime.onMessage.addListener(
 
 function processCommandSingle(command, tab) {
   chrome.tabs.sendMessage(tab.id, { command: command }, (response) => {
-    setIcon(response.message)
+    // setIcon(response.message)
   })
 }
 
@@ -85,7 +94,7 @@ function getGoogleMeetTabs(windowList) {
 function processCommand(command, googleMeetTabs) {
   googleMeetTabs.forEach((tab) => {
     chrome.tabs.sendMessage(tab.id, { command: command }, (response) => {
-      setIcon(response.message)
+      // setIcon(response.message)
     })
   })
 }

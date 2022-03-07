@@ -178,6 +178,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendMuteEvent();
       sendResponse({ message: muted ? "muted" : "unmuted" });
     }
+  } else if (request && request.command && request.command === "get-attendants"){
+    getAttendants().then((names)=>{
+      chrome.runtime.sendMessage({ "attendants" : names});
+    })
+    
   }
   // console.log(chrome.runtime.getPlatformInfo())
   // sendResponse({ message: cam ? "cam-off" : "cam-on" });

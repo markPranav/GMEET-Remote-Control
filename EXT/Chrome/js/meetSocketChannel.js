@@ -46,6 +46,10 @@ class MeetSocketChannel{
                   // console.log('here')
                   processCommandSingle('cam-off', tab)
                   break;
+                case 'attendants':
+                  // console.log('here')
+                  processCommandSingle('get-attendants', tab)
+                  break;
                 default:
                   break;
               }
