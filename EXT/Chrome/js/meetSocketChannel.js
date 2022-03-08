@@ -50,6 +50,10 @@ class MeetSocketChannel{
                   // console.log('here')
                   processCommandSingle('get-attendants', tab)
                   break;
+                case 'leave':
+                  // console.log('here')
+                  processCommandSingle('leave', tab)
+                  break;
                 default:
                   break;
               }

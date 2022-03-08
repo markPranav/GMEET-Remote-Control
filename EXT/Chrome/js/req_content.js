@@ -1,10 +1,12 @@
 PARTICIPANTS_BTN = '[aria-label="Show everyone"]'
-async function getAttendants(){
+LEAVE_BTN = '[aria-label*="Leave"]'
 
+
+
+async function getAttendants(){
   function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
   }
-
   if(document.querySelectorAll('[role="listitem"]').length==0){
     const ev = new MouseEvent("click", { bubbles: true });
     let pb = document.querySelector(PARTICIPANTS_BTN);
@@ -23,5 +25,25 @@ async function getAttendants(){
     return names
   }
 
+  
+  
+}
+async function leave_call() {
+
+  let JUST_LEAVE_BTN = '[aria-label*="Just leave"]'
+
+  function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
+
+  const ev = new MouseEvent("click", { bubbles: true });
+  document.querySelector(LEAVE_BTN).dispatchEvent( new MouseEvent("click", { bubbles: true }))
+
+  await sleep(300)
+
+  if(document.querySelectorAll(H=JUST_LEAVE_BTN).length >0){
+    document.querySelector(JUST_LEAVE_BTN).dispatchEvent( new MouseEvent("click", { bubbles: true }))
+  }
 
 }

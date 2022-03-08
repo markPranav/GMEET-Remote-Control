@@ -17,7 +17,7 @@
     "content_scripts": [
       {
         "matches": ["https://meet.google.com/*"],
-        "js": ["js/get_attendants.js", "js/meetmute.js" ]
+        "js": ["js/req_content.js", "js/meetmute.js" ]
       }
     ],
     "action": {

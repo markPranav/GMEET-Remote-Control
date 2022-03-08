@@ -183,6 +183,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       chrome.runtime.sendMessage({ "attendants" : names});
     })
     
+  } else if (request && request.command && request.command === "leave"){
+    leave_call()
   }
   // console.log(chrome.runtime.getPlatformInfo())
   // sendResponse({ message: cam ? "cam-off" : "cam-on" });
