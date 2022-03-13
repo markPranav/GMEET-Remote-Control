@@ -1,12 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMeet RC Documentation</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="./index.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="markPranav" data-description="Support me on Buy me a coffee!" data-message="If you like this application (GMeet RC), please do support me by buying me a coffee." data-color="#20BF55" data-position="Right" data-x_margin="18" data-y_margin="70"></script>
+  <title>GMeet RC Documentation</title>
 </head>
+
 <body>
-    <h1>Hello</h1>
+  <header>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #20BF55;">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-family: monoton; font-size: x-large;" href="#">GMeet RC</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://markpran.com" target="_blank">Blog</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item">
+              <a href="https://www.buymeacoffee.com/markPranav" target="_blank"><img
+                  src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+                  style="height: 36px !important;width: 130.2px !important;"></a>
+              <!-- <a href="https://www.buymeacoffee.com/markPranav" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 162.75px !important;" ></a> -->
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link active" href="https://markpran.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="36" height="36" fill="currentcolor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                </svg></a>
+              <a class="nav-link active" href="https://markpran.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="36" height="36" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                  <path
+                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                </svg></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar END -->
+    <!-- Iqnfo download START -->
+    <div class="sticky-top alert alert-warning alert-dismissible fade show d-flex align-items-center mb-0 py-2" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+      <div class="marquee my-auto">
+        <span>
+          You need to install browser extension & the controller app in order to fully utilize this service.
+        </span>
+      </div>
+      <button type="button" class="btn-close p-3 pb-1" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Info Download END -->
+  </header>
+  <!-- BANNER START -->
+  <section class="container-fluid row m-0" style="background-color: #0B4F6C; min-height: 75vh; overflow-x: hidden;">
+    <div class="d-flex flex-column col-12 col-md-7 my-5 banner-left justify-content-center">
+      <h4 class="display-6">Get Started with</h4>
+      <h1 class="display-1" style="font-family: Monoton; color: #20BF55;">GMeet RC</h1>
+      <h4 class="display-6">Download the chrome extension now.</h4>
+      <a href="#" style="width: 250px;" class="btn btn-info">Open Chrome Webstore</a>
+    </div>
+    <div class="col-md-5 banner-right d-flex flex-column justify-content-center align-items-center">
+      <h3 class="display-6">Download the Controller mobile App</h3>
+      <div class="row">
+        <div class="col-6">
+          <h6>For iOS</h6>
+          <div class="row image-cont" >
+            <img  src="https://picsum.photos/150" alt="">
+          </div>
+          <div class="store-btn m-2 text-center">
+            <div class="btn btn-primary">App Store</div>
+          </div>
+        </div>
+        <div class="col-6">
+          <h6>For Android</h6>
+          <div class=" row image-cont">
+            <img src="https://picsum.photos/150" alt="">
+          </div>
+          <div class="store-btn m-2 text-center">
+            <div class="btn btn-success">Play Store</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- BANNER END -->
+
+  <!-- HELP & DOC SECTION START -->
+  <section class="container-fluid m-0">
+    <h2 class="display-3">Help & Documentation</h2>
+    <div>
+      <!-- Abstract START -->
+      <p class="fs-6">
+        <span style="font-family: monoton;">GMeet RC</span>, is a plugin that allows you to remotely control your google meet instance running on a different device with your mobile device (Android, iOS).
+        <br>
+        In order to use this you need to install our <a href="#">browser extension</a> and the <a href="#">controller app</a>  on your mobile device.
+      </p>
+      <!-- Abstaract END -->
+    </div>
+
+    <!-- Product CARDS START -->
+    <h4 class="display-6">Included in this Bundle</h4>
+    <div class="">
+      <div class="d-flex flex-wrap align-content-center justify-content-evenly">
+        <!-- CARD #1 START -->
+        <div class="card mb-3" style="width: 20rem;">
+          <img class="img-thumbnail" src="./assets/images/GMEET RC Hub.png" class="card-img-top" alt="...">
+          <div class="card-header">
+            <h6 class="card-title">GMeet RC Browser Extension</h6>
+          </div>
+          <div class="card-body">
+            <p class="card-text">This is the browser extension, that recieves and controls the meet instance. This is an open source free to use and modify plugin, developed by us. It is operated with web socket technology and provides a fast seamless lossless connection between browser and mobile remote.</p>
+            <small class="text-muted">Mandatory to install.</small>
+          </div>
+          <div class="card-footer text-muted text-end">
+            Read Docs <span class="mx-5"><svg style="transform: scale(6,3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg></span>
+          </div>
+        </div>
+        <!-- Card #1 END -->
+        <!-- Card #2 START -->
+        <div class="card mb-3" style="width: 20rem;">
+          <img class="img-thumbnail" src="./assets/images/GMeet RC home.png" class="card-img-top" alt="...">
+          <div class="card-header">
+            <h6 class="card-title">GMeet RC Controller App</h6>
+          </div>
+          <div class="card-body">
+            <p class="card-text">This is our flagship app works on both iOS and Android, it utilizes a built in web socket server to control and operate multiple meet instances on various devices. With everything built in and prepared, users would only need to click on the poer button and operate their meets away from keyboard.</p>
+            <small class="text-muted">Choose between this and the latter, EASY to use, install and play.</small>
+          </div>
+          <div class="card-footer text-muted text-end">
+            Read Docs <span class="mx-5"><svg style="transform: scale(6,3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg></span>
+          </div>
+        </div>
+        <!-- Card #2 END -->
+        <!-- Card #3 START -->
+        <div class="card mb-3" style="width: 20rem;">
+          <img class="img-thumbnail" src="./assets/images/GMeet RC diy home.png" class="card-img-top" alt="...">
+          <div class="card-header">
+            <h6 class="card-title">GMeet RC DIY Barebones App</h6>
+          </div>
+          <div class="card-body">
+            <p class="card-text">This is an open-source barebones package built with flutter, provides a basic required api-framework, which provides necessary communication mechanism to control meet instance. This app can be moulded into any way a developer wants and can use it as an sdk with necessary resources, skills and tools.</p>
+            <small class="text-muted">Choose between this and the former, HARD to use, require developer level skillset.</small>
+          </div>
+          <div class="card-footer text-muted text-end">
+            Read Docs <span class="mx-5"><svg style="transform: scale(6,3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg></span>
+          </div>
+        </div>
+        <!-- Card #3 END -->
+      </div>
+    </div>
+    <!-- Product Cards END -->
+    
+  </section>
+  <!-- HELP & DOC END -->
+
+  <!-- Footer START -->
+  <footer>
+    <div class="align-items-center container-fluid foot-cont p-2">
+      <div class="d-flex">
+        <a class="navbar-brand text-light" style="font-family: monoton; font-size: x-large;" href="#">GMeet RC</a>
+        <a class="ms-auto" href="https://www.buymeacoffee.com/markPranav" target="_blank"><img
+          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+          style="height: 36px !important;width: 130.2px !important;"></a>
+      </div>
+      <hr class="m-1">
+      <span class="text-light">&copy 2022 markPran</span>
+    </div>
+  </footer>
+  <!-- Footer END -->
 </body>
 </html>
