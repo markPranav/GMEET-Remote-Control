@@ -65,4 +65,8 @@
     background-color: #20BF55;
   }
 
-  
+  .pran-alert{
+    position: sticky;
+    top: 0rem;
+    /* align-self: flex-start; */
+  }
