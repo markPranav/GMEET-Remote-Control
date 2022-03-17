@@ -69,21 +69,20 @@
     <!-- Navbar END -->
     <!-- Info download START -->
     <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center mb-0 py-2 pran-alert"
-    role="alert">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-      class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
-      aria-label="Warning:">
-      <path
-        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-    </svg>
-    <div class="marquee my-auto">
-      <span>
-        You need to install browser extension & the controller app in order to fully utilize this service.
-      </span>
+      role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+        <path
+          d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+      </svg>
+      <div class="marquee my-auto">
+        <span>
+          You need to install browser extension & the controller app in order to fully utilize this service.
+        </span>
+      </div>
+      <button type="button" class="btn-close p-3 pb-1" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <button type="button" class="btn-close p-3 pb-1" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  <!-- Info Download END -->
+    <!-- Info Download END -->
   </header>
 
   <div class="row m-0">
@@ -102,7 +101,7 @@
         </div>
         <ul id="sidemenu"
           class="list-unstyled ms-1 collapse navbar-collapse flex-column align-self-stretch align-items-stretch navbar-nav-scroll"
-          style="--bs-scroll-height: 100vh;">
+          style="--bs-scroll-height: 90vh;">
           <hr />
           <li>
             <a class="btn accordion-button pran collapsed" data-bs-toggle="collapse" href="#installation-menu"
@@ -110,13 +109,13 @@
             <div id="installation-menu" class="collapse py-2 px-3">
               <ul class="list-unstyled text-muted small text-decoration-none text-start ms-3 ">
                 <li>
-                  <a class="text-reset" href="overview-section">Overview</a>
+                  <a class="text-reset" href="#overview-section">Overview</a>
                 </li>
                 <li>
-                  <a class="text-reset" href="browser-section">Browser extension</a>
+                  <a class="text-reset" href="#browser-section">Browser extension</a>
                 </li>
                 <li>
-                  <a class="text-reset" href="app-section">Controller App</a>
+                  <a class="text-reset" href="#app-section">Controller App</a>
                 </li>
               </ul>
             </div>
@@ -129,10 +128,10 @@
             <div id="usage-menu" class="collapse py-2 px-3">
               <ul class="list-unstyled text-muted small text-decoration-none ms-3">
                 <li>
-                  <a class="text-reset" href="pairing-section">Pairing &Configuration</a>
+                  <a class="text-reset" href="#pairing-section">Pairing &Configuration</a>
                 </li>
                 <li>
-                  <a class="text-reset" href="basics-section">Basics</a>
+                  <a class="text-reset" href="#basics-section">Basics</a>
                 </li>
               </ul>
             </div>
@@ -145,7 +144,7 @@
             <div id="features-menu" class="collapse py-2 px-3">
               <ul class="list-unstyled text-muted small text-decoration-none ms-3">
                 <li>
-                  <a class="text-reset" href="attendance-section">Attendance</a>
+                  <a class="text-reset" href="#attendance-section">Attendance</a>
                 </li>
               </ul>
             </div>
@@ -163,13 +162,169 @@
             <a class="btn" href="">GMeet RC Controller Docs</a>
           </li>
           <hr>
-          <li style="height: 100px;"></li>
         </ul>
       </nav>
     </aside>
     <!-- Side section END -->
-    <main class="col-12 col-sm-7 col-md-9 p-2" style="height: 1000px;">
-      
+    <main class="col-sm-7 col-md-9 p-2 flex-end">
+      <h1 class="display-2">Getting Started</h1>
+      <!-- Installation Section START -->
+      <section class="container-fluid" id="installation-section">
+        <h2 class="display-4">Installation</h1>
+          <div class="" id="overview-section">
+            <h3 class="display-6">Overview</h3>
+            <p class="lead">
+              You need to install a RC Hub browser extension and a controller App in order to fully achieve the
+              capability of this application.
+            </p>
+          </div>
+          <hr>
+          <div class="" id="browser-ext-section">
+            <h3 class="display-6">GMeet RC Hub</h1>
+              <ol>
+                <li>Go to <a href="">https://</a></li>
+                <li>
+                  Click on install
+                </li>
+                <li>Done</li>
+              </ol>
+          </div>
+          <hr>
+          <p class="lead text-danger">
+            You may choose to use <strong>GMeet RC</strong> or <strong>DIY Barebones app</strong>, current instructions are for the former. 
+          </p>
+          <hr>
+          <div class="" id="app-section">
+            <h3 class="display-6">Controller App (GMeet RC)</h3>
+            <ol>
+              <li>
+                Scan the QR Code or go to the respect app store links given below.
+                <div class="row">
+                  <div class="col-sm-6 d-flex flex-column p-2 align-items-center">
+                    <button class="btn btn-primary">App Sore</button>
+                    <div class="d-flex w-100 p-2 align-items-center">
+                      <div class="w-100 m-2" style="height: 1px; background-color: #2b2a2a;"></div>
+                      <span>or</span>
+                      <div class="w-100 m-2" style="height: 1px; background-color: #2b2a2a;"></div>
+                    </div>
+                    <img class="img-thumbnail" src="https://picsum.photos/150" alt="" width="150px">
+                    <p>For iOS</p>
+                  </div>
+                  <div class="col-sm-6 d-flex flex-column p-2 align-items-center">
+                    <button class="btn btn-success">Play Sore</button>
+                    <div class="d-flex w-100 p-2 align-items-center">
+                      <div class="w-100 m-2" style="height: 1px; background-color: #2b2a2a;"></div>
+                      <span>or</span>
+                      <div class="w-100 m-2" style="height: 1px; background-color: #2b2a2a;"></div>
+                    </div>
+                    <img class="img-thumbnail" src="https://picsum.photos/150" alt="" width="150px">
+                    <p>For Android</p>
+                  </div>
+                </div>
+              </li>
+              <li>Install the app on your mobile device and launch it.</li>
+              <li>Done</li>
+            </ol>
+          </div>
+          <hr>
+      </section>
+      <hr class="text-success my-2">
+      <section class="container-fluid" id="usage-section">
+        <h2 class="display-4">Usage</h1>
+          <div class="" id="pairing-section">
+            <h3 class="display-6">Pairing/Configuration</h3>
+            <ol>
+              <div class="lead">On Controller APP</div>
+              <li class="">
+                <p>Click on the power button to turn the remote on.</p>
+                <div class="text-center">
+                  <img src="../assets/images/app_main.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                </div>
+              </li>
+              <li>
+                <p>Check out the remote code on the app.</p>
+                <div class="text-center">
+                  <img src="../assets/images/GMeet RC code_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                </div>
+              </li>
+              <div class="lead">On Browser</div>
+              <li>
+                <p>Open the extension.</p>
+                <div class="text-center">
+                  <img src="../assets/images/chrome_ext_list.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                </div>
+              </li>
+              <li>
+                <p>Enter code in the input field.</p>
+                <div class="text-center">
+                  <img src="../assets/images/ext_popup_code_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                </div>
+              </li>
+              <li>
+                <p>Check the connection status if it says "Connected", you are good go.</p>
+                <div class="text-center">
+                  <img src="../assets/images/ext_popup_connected.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                </div>
+              </li>
+              <div class="lead">On Controller APP</div>
+              <li>
+               <p> Now on the app, select the appropiate desired channel.</p>
+               <div class="row justify-content-evenly">
+                <img src="../assets/images/GMeet RC home channel_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5 h-100">
+                <img src="../assets/images/channel selection.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+               </div>
+              </li>
+              <li>You have now successfully connected/configured/paired the devices.</li>
+              <li>Done</li>
+            </ol>
+          </div>
+          <hr>
+          <div class="" id="basics-section">
+            <h3 class="display-6">Basic Usage</h1>
+              <ol>
+                <li>
+                  <p>Make sure  you are paired with the desired channel.</p>
+                  <div class="row justify-content-evenly">
+                    <img src="../assets/images/GMeet RC home channel_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5 h-100">
+                    <img src="../assets/images/channel selection.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                   </div>
+                </li>
+                <li>
+                  <p>Clicking on mic toggle button / cam toggle button will now work exactly as intended on the meet instace remotely running.</p>
+                  <div class="text-center">
+                    <img src="../assets/images/app_main_remote_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                  </div>
+                </li>
+                <li>Done</li>
+              </ol>
+          </div>
+          <hr>
+      </section>
+      <hr class="text-success my-2">
+      <section class="container-fluid" id="features-section">
+        <h2 class="display-4">Features</h1>
+          <div class="" id="attendance-section">
+            <h3 class="display-6">Attendance</h3>
+            <ol>
+              <li>
+                <p>Make sure  you are paired with the desired channel.</p>
+                <div class="row justify-content-evenly">
+                  <img src="../assets/images/GMeet RC home channel_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5 h-100">
+                  <img src="../assets/images/channel selection.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                 </div>
+              </li>
+              <li>Click on the attendants icon on the remote.</li>
+              <li>
+                <p>You can read the list or share it, using on screen dialog.</p>
+                <div class="text-center">
+                  <img src="../assets/images/attendants_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
+                </div>
+              </li>
+            </ol>
+          </div>
+          
+          <hr>
+      </section>
     </main>
   </div>
   <!-- Footer START -->
