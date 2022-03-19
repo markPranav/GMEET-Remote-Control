@@ -22,9 +22,9 @@
 <body>
   <header>
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #20BF55;">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #20BF55;">
       <div class="container-fluid">
-        <a class="navbar-brand" style="font-family: monoton; font-size: x-large;" href="#">GMeet RC</a>
+        <a class="navbar-brand" style="font-family: monoton; font-size: x-large;" href="../">GMeet RC</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
           aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,6 +39,11 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://markpran.com" target="_blank">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="https://github.com/markPranav/GMEET-Remote-Control" target="_blank"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg></span> Github Repo</a>
             </li>
           </ul>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
@@ -88,83 +93,84 @@
   <div class="row m-0">
 
     <!-- Side section START -->
-    <aside class="bg-light col-12 col-sm-5 col-md-3 pran-sidebar">
-
-      <nav class="navbar navbar-expand-sm navbar-light flex-column">
-        <div class="align-self-stretch d-flex justify-content-evenly">
-          <a class="navbar-brand" href="#">Table of contents</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidemenu"
-            aria-controls="sidemenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-        </div>
-        <ul id="sidemenu"
-          class="list-unstyled ms-1 collapse navbar-collapse flex-column align-self-stretch align-items-stretch navbar-nav-scroll"
-          style="--bs-scroll-height: 90vh;">
-          <hr />
-          <li>
-            <a class="btn accordion-button pran collapsed" data-bs-toggle="collapse" href="#installation-menu"
-              role="button" aria-expanded="false" aria-controls="installation-menu"><span></span> Installation</a>
-            <div id="installation-menu" class="collapse py-2 px-3">
-              <ul class="list-unstyled text-muted small text-decoration-none text-start ms-3 ">
-                <li>
-                  <a class="text-reset" href="#overview-section">Overview</a>
-                </li>
-                <li>
-                  <a class="text-reset" href="#browser-section">Browser extension</a>
-                </li>
-                <li>
-                  <a class="text-reset" href="#app-section">Controller App</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a class="btn accordion-button pran collapsed" data-bs-toggle="collapse" href="#usage-menu" role="button"
-              aria-expanded="false" aria-controls="usage-menu">
-              Usage
-            </a>
-            <div id="usage-menu" class="collapse py-2 px-3">
-              <ul class="list-unstyled text-muted small text-decoration-none ms-3">
-                <li>
-                  <a class="text-reset" href="#pairing-section">Pairing &Configuration</a>
-                </li>
-                <li>
-                  <a class="text-reset" href="#basics-section">Basics</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a class="btn accordion-button pran collapsed" data-bs-toggle="collapse" href="#features-menu" role="button"
-              aria-expanded="true" aria-controls="features-menu">
-              Features
-            </a>
-            <div id="features-menu" class="collapse py-2 px-3">
-              <ul class="list-unstyled text-muted small text-decoration-none ms-3">
-                <li>
-                  <a class="text-reset" href="#attendance-section">Attendance</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <hr>
-          <li>
-            <a class="btn" href="">FAQs</a>
-          </li>
-          <hr>
-          <li>
-            <a class="btn" href="">GMeet RC Hub Docs</a>
-          </li>
-          <hr>
-          <li>
-            <a class="btn" href="">GMeet RC Controller Docs</a>
-          </li>
-          <hr>
-        </ul>
-      </nav>
-    </aside>
+    <div class="bg-light col-12 col-sm-5 col-md-3 pran-sidebar-cont">
+      <aside class="pran-sidebar">
+        <nav class="navbar navbar-expand-sm navbar-light flex-column">
+          <div class="align-self-stretch d-flex justify-content-evenly">
+            <a class="navbar-brand" href="#">Table of contents</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidemenu"
+              aria-controls="sidemenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+          </div>
+          <ul id="sidemenu"
+            class="list-unstyled ms-1 collapse navbar-collapse flex-column align-self-stretch align-items-stretch navbar-nav-scroll"
+            style="--bs-scroll-height: 90vh;">
+            <hr />
+            <li>
+              <a class="btn accordion-button pran collapsed" data-bs-toggle="collapse" href="#installation-menu"
+                role="button" aria-expanded="false" aria-controls="installation-menu"><span></span> Installation</a>
+              <div id="installation-menu" class="collapse py-2 px-3">
+                <ul class="list-unstyled text-muted small text-decoration-none text-start ms-3 ">
+                  <li>
+                    <a class="text-reset" href="#overview-section">Overview</a>
+                  </li>
+                  <li>
+                    <a class="text-reset" href="#browser-section">Browser extension</a>
+                  </li>
+                  <li>
+                    <a class="text-reset" href="#app-section">Controller App</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="btn accordion-button pran collapsed" data-bs-toggle="collapse" href="#usage-menu" role="button"
+                aria-expanded="false" aria-controls="usage-menu">
+                Usage
+              </a>
+              <div id="usage-menu" class="collapse py-2 px-3">
+                <ul class="list-unstyled text-muted small text-decoration-none ms-3">
+                  <li>
+                    <a class="text-reset" href="#pairing-section">Pairing &Configuration</a>
+                  </li>
+                  <li>
+                    <a class="text-reset" href="#basics-section">Basics</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="btn accordion-button pran collapsed" data-bs-toggle="collapse" href="#features-menu" role="button"
+                aria-expanded="true" aria-controls="features-menu">
+                Features
+              </a>
+              <div id="features-menu" class="collapse py-2 px-3">
+                <ul class="list-unstyled text-muted small text-decoration-none ms-3">
+                  <li>
+                    <a class="text-reset" href="#attendance-section">Attendance</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <hr>
+            <li>
+              <a class="btn btn-outline-secondary btn-lg w-100" href="../faq/">FAQs</a>
+            </li>
+            <hr>
+            <li>
+              <a class="btn btn-outline-secondary btn-lg w-100" href="../RC-hub/">GMeet RC Hub Docs</a>
+            </li>
+            <hr>
+            <li>
+              <a class="btn btn-outline-secondary btn-lg w-100" href="../controller-app">GMeet RC Controller Docs</a>
+            </li>
+            <hr>
+          </ul>
+        </nav>
+      </aside>
+    </div>
     <!-- Side section END -->
     <main class="col-sm-7 col-md-9 p-2 flex-end">
       <h1 class="display-2">Getting Started</h1>
@@ -184,7 +190,10 @@
               <ol>
                 <li>Go to <a href="">https://</a></li>
                 <li>
-                  Click on install
+                  <p>Click on install.</p>
+                  <div class="text-center">
+                  <img src="https://picsum.photos/600/300" alt="gmeet rc main" class="img-thumbnail">
+                </div>
                 </li>
                 <li>Done</li>
               </ol>
@@ -198,7 +207,7 @@
             <h3 class="display-6">Controller App (GMeet RC)</h3>
             <ol>
               <li>
-                Scan the QR Code or go to the respect app store links given below.
+                Scan the QR Code or go to the respective app store links given below.
                 <div class="row">
                   <div class="col-sm-6 d-flex flex-column p-2 align-items-center">
                     <button class="btn btn-primary">App Sore</button>
@@ -255,13 +264,13 @@
                 </div>
               </li>
               <li>
-                <p>Enter code in the input field.</p>
+                <p>Enter the code in the input field.</p>
                 <div class="text-center">
                   <img src="../assets/images/ext_popup_code_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
                 </div>
               </li>
               <li>
-                <p>Check the connection status if it says "Connected", you are good go.</p>
+                <p>Check the connection status, if it says "Connected", you are good to go.</p>
                 <div class="text-center">
                   <img src="../assets/images/ext_popup_connected.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
                 </div>
@@ -274,7 +283,7 @@
                 <img src="../assets/images/channel selection.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
                </div>
               </li>
-              <li>You have now successfully connected/configured/paired the devices.</li>
+              <li>You have now successfully connected/ configured/ paired the devices.</li>
               <li>Done</li>
             </ol>
           </div>
@@ -315,11 +324,12 @@
               </li>
               <li>Click on the attendants icon on the remote.</li>
               <li>
-                <p>You can read the list or share it, using on screen dialog.</p>
+                <p>You can read the list or share it, using the on screen dialog.</p>
                 <div class="text-center">
                   <img src="../assets/images/attendants_help.png" alt="gmeet rc main" class="img-thumbnail col-sm-5">
                 </div>
               </li>
+              <li>Done</li>
             </ol>
           </div>
           
@@ -337,7 +347,7 @@
             style="height: 36px !important;width: 130.2px !important;"></a>
       </div>
       <hr class="m-1">
-      <span class="text-light">&copy 2022 markPran</span>
+      <span class="text-light">&copy;2022 markPran</span>
     </div>
   </footer>
   <!-- Footer END -->
